@@ -16,7 +16,7 @@ import Builtin
 
 /// A 128-bit unsigned integer type.
 @frozen
-public struct UInt128 {
+public struct UInt128: Sendable {
 #if _pointerBitWidth(_64) || arch(arm64_32)
   //  On 64-bit platforms (including arm64_32 and any similar targets with
   //  32b pointers but HW-backed 64b integers), the layout is simply that

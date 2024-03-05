@@ -16,7 +16,7 @@ import Builtin
 
 /// A 128-bit signed integer type.
 @frozen
-public struct Int128 {
+public struct Int128: Sendable {
   //  On 64-bit platforms (including arm64_32 and any similar targets with
   //  32b pointers but HW-backed 64b integers), the layout is simply that
   //  of `Builtin.Int128`.
