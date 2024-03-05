@@ -77,6 +77,11 @@ public struct Int128 {
     self = unsafeBitCast(_value, to: Self.self)
   }
 #endif
+  
+  @_transparent
+  public init(bitPattern: UInt128) {
+    self.init(bitPattern._value)
+  }
 }
 
 // MARK: - Constants
