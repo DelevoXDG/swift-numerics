@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:6.0
 //===--- Package.swift ----------------------------------------*- swift -*-===//
 //
 // This source file is part of the Swift Numerics open source project
@@ -21,6 +21,8 @@ let package = Package(
     .library(name: "ComplexModule", targets: ["ComplexModule"]),
     .library(name: "Numerics", targets: ["Numerics"]),
     .library(name: "RealModule", targets: ["RealModule"]),
+    .library(name: "IntegerUtilities", targets: ["IntegerUtilities"]),
+    .library(name: "Int128Demo", targets: ["Int128Demo"])
   ],
   
   targets: [
@@ -35,6 +37,14 @@ let package = Package(
       name: "IntegerUtilities",
       dependencies: [],
       exclude: excludedFilenames
+    ),
+    
+    .target(
+      name: "Int128Demo",
+      dependencies: [],
+      swiftSettings: [
+        .enableExperimentalFeature("BuiltinModule")
+      ]
     ),
     
     .target(
@@ -75,6 +85,11 @@ let package = Package(
       name: "IntegerUtilitiesTests",
       dependencies: ["IntegerUtilities", "_TestSupport"],
       exclude: ["CMakeLists.txt"]
+    ),
+    
+    .testTarget(
+      name: "Int128Tests",
+      dependencies: ["Int128Demo", "_TestSupport"]
     ),
     
     .testTarget(

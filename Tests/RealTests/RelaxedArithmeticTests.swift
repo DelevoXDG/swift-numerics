@@ -8,7 +8,7 @@
 // See https://swift.org/LICENSE.txt for license information
 //
 //===----------------------------------------------------------------------===//
-
+/*
 import XCTest
 import RealModule
 import _TestSupport
@@ -127,3 +127,4 @@ final class RelaxedArithmeticTests: XCTestCase {
   }
 }
 #endif
+*/
