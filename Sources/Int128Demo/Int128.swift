@@ -338,7 +338,7 @@ extension Int128 {
 
 // MARK: - Numeric conformance
 
-extension Int128: Numeric {
+extension Int128: SignedNumeric {
   public typealias Magnitude = UInt128
   
   @inlinable
